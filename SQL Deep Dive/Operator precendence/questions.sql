@@ -8,9 +8,20 @@
 * that are from either Japan or Australia
 */
 
+Answer: 
+SELECT firstname, lastname, country, income, age from customers
+WHERE income > 50000 
+  AND (age < 30 OR age >= 50)
+and (country = 'Japan' OR country = 'Australia')
+
 /*
 * DB: Store
 * Table: Orders
 * Question: 
 * What was our total sales in June of 2004 for orders over 100 dollars?
 */
+
+Answer: 205226.06
+SELECT SUM(totalamount) from orders
+WHERE (orderdate >= '2004-06-01' AND orderdate <= '2004-06-30') 
+AND totalamount > 100
